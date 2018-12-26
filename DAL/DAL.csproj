@@ -51,9 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Fertilizer.cs" />
-    <Compile Include="Entities\Fert_List.cs" />
-    <Compile Include="Entities\Flowering_Beginning.cs" />
-    <Compile Include="Entities\Flowering_Ending.cs" />
     <Compile Include="Entities\Flowering_List.cs" />
     <Compile Include="LDA.cs" />
     <Compile Include="Entities\Lifespan.cs" />
@@ -63,11 +60,13 @@
     <Compile Include="Entities\Project.cs" />
     <Compile Include="Entities\Soil_Type.cs" />
     <Compile Include="Entities\Status.cs" />
+    <Compile Include="Entities\sysdiagram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,10 +12,7 @@ namespace DAL
         {
         }
 
-        public virtual DbSet<Fert_List> Fert_List { get; set; }
         public virtual DbSet<Fertilizer> Fertilizers { get; set; }
-        public virtual DbSet<Flowering_Beginning> Flowering_Beginning { get; set; }
-        public virtual DbSet<Flowering_Ending> Flowering_Ending { get; set; }
         public virtual DbSet<Flowering_List> Flowering_List { get; set; }
         public virtual DbSet<Life_Form> Life_Form { get; set; }
         public virtual DbSet<Lifespan> Lifespans { get; set; }
@@ -24,6 +21,7 @@ namespace DAL
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<Soil_Type> Soil_Type { get; set; }
         public virtual DbSet<Status> Status { get; set; }
+        //public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -31,32 +29,9 @@ namespace DAL
                 .Property(e => e.Fert_Name)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Flowering_Beginning>()
-                .Property(e => e.FlowBeg_Name)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Flowering_Beginning>()
-                .HasMany(e => e.Flowering_List)
-                .WithRequired(e => e.Flowering_Beginning)
-                .HasForeignKey(e => e.FTB_ID);
-
-            modelBuilder.Entity<Flowering_Ending>()
-                .Property(e => e.FlowEnd_Name)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Flowering_Ending>()
-                .HasMany(e => e.Flowering_List)
-                .WithRequired(e => e.Flowering_Ending)
-                .HasForeignKey(e => e.FTE_ID);
-
             modelBuilder.Entity<Life_Form>()
                 .Property(e => e.LF_Name)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<Life_Form>()
-                .HasMany(e => e.Plants)
-                .WithRequired(e => e.Life_Form)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Lifespan>()
                 .Property(e => e.Lifespan1)
@@ -83,23 +58,9 @@ namespace DAL
                 .IsUnicode(false);
 
             modelBuilder.Entity<Plant>()
-                .HasMany(e => e.Fert_List)
-                .WithRequired(e => e.Plant)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Plant>()
                 .HasMany(e => e.Flowering_List)
                 .WithRequired(e => e.Plant)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Plant>()
-                .HasMany(e => e.Plantings)
-                .WithRequired(e => e.Plant)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Planting>()
-                .Property(e => e.Planting_Date)
-                .IsUnicode(false);
 
             modelBuilder.Entity<Planting>()
                 .Property(e => e.Planting_Place)

@@ -12,8 +12,7 @@ namespace DAL
         [Key]
         public int Planting_ID { get; set; }
 
-        [Required]
-        [StringLength(10)]
+        [Column(TypeName = "date")]
         public DateTime Planting_Date { get; set; }
 
         public string Planting_Place { get; set; }

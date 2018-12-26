@@ -12,7 +12,6 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Plant()
         {
-            Fert_List = new HashSet<Fert_List>();
             Flowering_List = new HashSet<Flowering_List>();
             Plantings = new HashSet<Planting>();
         }
@@ -30,17 +29,17 @@ namespace DAL
 
         public string Watering_Comment { get; set; }
 
-        [StringLength(100)]
         public string Image { get; set; }
+
+        public int Fert_ID { get; set; }
+
+        public int ST_ID { get; set; }
+
+        public int LS_ID { get; set; }
 
         public int LF_ID { get; set; }
 
-        public int? ST_ID { get; set; }
-
-        public int? LS_ID { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Fert_List> Fert_List { get; set; }
+        public virtual Fertilizer Fertilizer { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Flowering_List> Flowering_List { get; set; }

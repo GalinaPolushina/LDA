@@ -15,16 +15,14 @@
             </ListView.View>
         </ListView>
 
-        <ListBox x:Name="Plantings" SelectionMode ="Extended"  ItemsSource="{Binding Plantings}" Margin="218,10,9.6,10.4">
+        <ListBox x:Name="PlantingsLB" ItemsSource="{Binding PlantingSource}"  Margin="218,10,9.6,10.4">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="5">
-                        <TextBlock FontSize="18" Text="{Binding Path=Plant.Name}" />
-                        <TextBlock>Plant:
-                            <TextBlock Text="{Binding Path= Plant}" />
+                        <TextBlock FontSize="18" Text="{Binding Path=ID}" />
+                        <TextBlock Text="Растение: "> <TextBlock Text="{Binding Path=Planting.Plant}" /> 
                         </TextBlock>
-                        <TextBlock>Status:
-                            <TextBlock Text="{Binding Path= Status}" />
+                        <TextBlock Text="Статус: " VerticalAlignment="Top"> <TextBlock Text="{Binding Path=Status.Name}" /> 
                         </TextBlock>
                     </StackPanel>
                 </DataTemplate>

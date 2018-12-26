@@ -17,10 +17,6 @@ namespace DAL
 
         public int FTE_ID { get; set; }
 
-        public virtual Flowering_Beginning Flowering_Beginning { get; set; }
-
-        public virtual Flowering_Ending Flowering_Ending { get; set; }
-
         public virtual Plant Plant { get; set; }
     }
 }

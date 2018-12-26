@@ -12,7 +12,7 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Fertilizer()
         {
-            Fert_List = new HashSet<Fert_List>();
+            Plants = new HashSet<Plant>();
         }
 
         [Key]
@@ -23,6 +23,6 @@ namespace DAL
         public string Fert_Name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Fert_List> Fert_List { get; set; }
+        public virtual ICollection<Plant> Plants { get; set; }
     }
 }
