@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LDAssistant.View;
+using LDAssistant.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +15,22 @@ namespace LDAssistant
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            var mainWindow = new MainWindow()
+            {
+                DataContext = new MainVM()
+            };
+            mainWindow.Show();
+
+            /*var mainWindow = new EditPlanting()
+            {
+                DataContext = new EditPlantingVM()
+            };
+            mainWindow.Show();*/
+
+        }
+
+
     }
 }

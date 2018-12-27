@@ -4,29 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LDAssistant"
+        xmlns:viewmodels="clr-namespace:LDAssistant.ViewModel"
         mc:Ignorable="d"
         Title="Landscape Designer Assistant" Height="600" Width="800">
-    <Grid>
-        <ListView HorizontalAlignment="Left" Height="550" Margin="10,10,0,0" VerticalAlignment="Top" Width="190">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
 
-        <ListBox x:Name="PlantingsLB" ItemsSource="{Binding PlantingSource}"  Margin="218,10,9.6,10.4">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Margin="5">
-                        <TextBlock FontSize="18" Text="{Binding Path=ID}" />
-                        <TextBlock Text="Растение: "> <TextBlock Text="{Binding Path=Planting.Plant}" /> 
-                        </TextBlock>
-                        <TextBlock Text="Статус: " VerticalAlignment="Top"> <TextBlock Text="{Binding Path=Status.Name}" /> 
-                        </TextBlock>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+    <Grid>
+        <DataGrid ItemsSource="{Binding PlantingSource}" AutoGenerateColumns="false" HorizontalAlignment="Left" Height="496" Margin="226,10,0,0" VerticalAlignment="Top" Width="558">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Растение" Binding="{Binding Plant.Plant_Name}" />
+            </DataGrid.Columns>            
+        </DataGrid>
+
+        <DataGrid ItemsSource="{Binding PlantSource}" AutoGenerateColumns="false" HorizontalAlignment="Left" Height="496" Margin="10,10,0,0" VerticalAlignment="Top" Width="211">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding Plant_Name}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

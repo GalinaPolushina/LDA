@@ -21,6 +21,7 @@ namespace LDAssistant.View
     {
         public EditPlanting()
         {
+            //DataContext = new EditPlanting();
             InitializeComponent();
         }
     }

@@ -7,6 +7,22 @@
         mc:Ignorable="d"
         Title="EditPlant" Height="450" Width="800">
     <Grid>
-        
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="32,65,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Название" HorizontalAlignment="Left" Margin="55,31,0,0" VerticalAlignment="Top"/>
+        <Label Content="Обрезка" HorizontalAlignment="Left" Margin="55,140,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="32,166,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Удобрения" HorizontalAlignment="Left" Margin="55,248,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="32,279,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Полив" HorizontalAlignment="Left" Margin="76,328,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="32,359,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Картинка" HorizontalAlignment="Left" Margin="343,31,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="157,279,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Почва" HorizontalAlignment="Left" Margin="488,59,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="488,90,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Срок жизни" HorizontalAlignment="Left" Margin="510,167,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="488,199,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Жизненная форма" HorizontalAlignment="Left" Margin="474,248,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="488,279,0,0" VerticalAlignment="Top" Width="120"/>
+
     </Grid>
 </Window>

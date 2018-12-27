@@ -66,6 +66,7 @@
     <Compile Include="Model\RelayCommand.cs" />
     <Compile Include="ViewModel\BaseVM.cs" />
     <Compile Include="ViewModel\Edit\EditPlantingVM.cs" />
+    <Compile Include="ViewModel\Edit\EditPlantVM.cs" />
     <Compile Include="ViewModel\MainVM.cs" />
     <Compile Include="View\EditPlant.xaml.cs">
       <DependentUpon>EditPlant.xaml</DependentUpon>

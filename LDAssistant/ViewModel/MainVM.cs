@@ -11,6 +11,7 @@ namespace LDAssistant.ViewModel
     public class MainVM : BaseVM
     {
         private ObservableCollection<Planting> plantingSource;
+        //свойство 
         public ObservableCollection<Planting> PlantingSource
         {
             get { return plantingSource; }
@@ -18,10 +19,46 @@ namespace LDAssistant.ViewModel
             {
                 plantingSource = value;
                 OnPropertyChanged("PlantingSource");
+
             }
         }
 
-        public Planting SelectedPlanting { get; set; }
+        private ObservableCollection<Plant> plantSource;
+        //свойство 
+        public ObservableCollection<Plant> PlantSource
+        {
+            get { return plantSource; }
+            set
+            {
+                plantSource = value;
+                OnPropertyChanged("PlantSource");
+
+            }
+        }
+
+        Planting selectedPlanting;
+        public Planting SelectedPlanting
+        {
+            get { return selectedPlanting; }
+            set
+            {
+                selectedPlanting = value;
+                OnPropertyChanged("SelectedPlanting");
+
+            }
+        }
+
+        Plant selectedPlant;
+        public Plant SelectedPlant
+        {
+            get { return selectedPlant; }
+            set
+            {
+                selectedPlant = value;
+                OnPropertyChanged("SelectedPlant");
+
+            }
+        }
 
         RelayCommand addPlantingCommand;
         public RelayCommand AddPlantingCommand
@@ -45,29 +82,24 @@ namespace LDAssistant.ViewModel
         }
 
         private LDA db;
-        int ID;
 
-        public MainVM(LDA dbcontext, int ID)
+        public MainVM()
         {
-            db = dbcontext;
-            this.ID = ID;
-            LoadPlantings();
+            db = new LDA();
+            db.Plants.Load();
+            db.Plantings.Load();
+            plantingSource = db.Plantings.Local;
+            plantSource = db.Plants.Local;
             AddPlantingCommand = new RelayCommand(AddPlanting);
             UpdatePlantingCommand = new RelayCommand(UpdatePlanting, CanExecute);
             DeletePlantingCommand = new RelayCommand(DeletePlanting, CanExecute);
             //AddSourceCommand = new RelayCommand(AddSource);
         }
 
-        private void LoadPlantings()
-        {
-            //db.Plantings.Include(i => i.Source_of_income).Include(i => i.User).Load();
-            PlantingSource = new ObservableCollection<Planting>(db.Plantings.Where(i => i.Planting_ID == ID).ToList());
-        }
-
         public void AddPlanting(object parameter)
         {
             Window window = new View.EditPlanting();
-            window.DataContext = new EditPlantingVM(db, null, ID);
+            //window.DataContext = new EditPlantingVM(db, null);
             window.Title = "Добавить";
             window.ShowDialog();
             //PlantingSource = new ObservableCollection<Planting>(db.Plantings.Where(i => i.User.Id == ID).ToList());
@@ -76,7 +108,7 @@ namespace LDAssistant.ViewModel
         public void UpdatePlanting(object parameter)
         {
             Window window = new View.EditPlanting();
-            window.DataContext = new EditPlantingVM(db, SelectedPlanting, ID);
+            //window.DataContext = new EditPlantingVM(db, SelectedPlanting);
             window.Title = "Изменить";
             window.ShowDialog();
         }
