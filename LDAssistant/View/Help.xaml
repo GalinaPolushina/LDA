@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LDAssistant.View"
         mc:Ignorable="d"
-        Title="Help" Height="450" Width="800">
-    <Grid>
-        
+        Title="Справка" FontFamily="Segoe Print" FontSize="15"  Height="337.815" Width="800" Background="#A5C6CD">
+    <Grid Margin="0,0,-0.4,169">
+        <TextBox HorizontalAlignment="Center" Background="#E1E1E1" Height="293" Margin="10,10,5,-164" TextWrapping="Wrap" Text="Система ПЛД автоматизирует процессы ведения записей при ландшафтном дизайне.
+Под записями подразумеваются пометки о произведенных посадках зелёных растений на какой-либо территории. 
+Приложение позволяет выбирать растения для посадки из текущего каталога, редактировать информацию о совершенных посадках (например, если растение перешло на новую стадию роста или погибло).
+Так же у пользователя есть возможность добавлять и уточнять информацию каталога растений. Каждая позиция каталога может сопровождаться изображением.
+" VerticalAlignment="Top" Width="779" RenderTransformOrigin="0.489,0.666"/>
+
     </Grid>
 </Window>

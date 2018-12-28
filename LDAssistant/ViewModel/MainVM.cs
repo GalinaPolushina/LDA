@@ -114,12 +114,7 @@ namespace LDAssistant.ViewModel
             Window window = new View.Help();
             window.Show();
         }
-
-        public void ShowProject()
-        {
-            Window window = new View.Project();
-            window.Show();
-        }
+        
 
         public void UpdateSPlant()
         {
@@ -241,19 +236,6 @@ namespace LDAssistant.ViewModel
 
             }
         }
-
-        private ICommand op;
-        public ICommand OP
-        {
-            get
-            {
-                return op ??
-                      (op = new RelayCommand(obj =>
-                      {
-                          ShowProject();
-                      }));
-
-            }
-        }
+        
     }
 }

@@ -5,26 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LDAssistant.View"
         mc:Ignorable="d"
-        Title="EditPlant" Height="450" Width="800">
-    <Grid>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="32,65,0,0" TextWrapping="Wrap" Text="{Binding SelectedPlant.Plant_Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Название" HorizontalAlignment="Left" Margin="55,31,0,0" VerticalAlignment="Top"/>
-        <Label Content="Обрезка" HorizontalAlignment="Left" Margin="55,140,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="32,166,0,0" TextWrapping="Wrap" Text="{Binding SelectedPlant.Cutting_Comment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Удобрения" HorizontalAlignment="Left" Margin="55,248,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="32,279,0,0" TextWrapping="Wrap" Text="{Binding SelectedPlant.Fert_Comment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Полив" HorizontalAlignment="Left" Margin="76,328,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="32,359,0,0" TextWrapping="Wrap" Text="{Binding SelectedPlant.Watering_Comment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Картинка" HorizontalAlignment="Left" Margin="343,31,0,0" VerticalAlignment="Top"/>
-        <ComboBox ItemsSource="{Binding FertSource}" DisplayMemberPath="Fert_Name" SelectedValuePath="Fert_ID" SelectedItem ="{Binding SelectedPlant.Fertilizer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="157,279,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Почва" HorizontalAlignment="Left" Margin="488,59,0,0" VerticalAlignment="Top"/>
-        <ComboBox ItemsSource="{Binding SoilTSource}" DisplayMemberPath="ST_Name" SelectedValuePath="ST_ID" SelectedItem ="{Binding SelectedPlant.Soil_Type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="488,90,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Срок жизни" HorizontalAlignment="Left" Margin="510,167,0,0" VerticalAlignment="Top"/>
-        <ComboBox ItemsSource="{Binding LifeSSource}" DisplayMemberPath="Lifespan1" SelectedValuePath="LS_ID" SelectedItem ="{Binding SelectedPlant.Lifespan, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="488,199,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Жизненная форма" HorizontalAlignment="Left" Margin="474,248,0,0" VerticalAlignment="Top"/>
-        <ComboBox ItemsSource="{Binding LifeFSource}" DisplayMemberPath="LF_Name" SelectedValuePath="LF_ID" SelectedItem ="{Binding SelectedPlant.Life_Form, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="488,279,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Button" Command="{Binding Path=CreatePlant}" HorizontalAlignment="Left" Margin="664,359,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Обзор" Command="{Binding Path=OpenFD}" HorizontalAlignment="Left" Margin="300,90,0,0" VerticalAlignment="Top" Width="75"/>
+        Title="Растение" Height="518.4" Width="531.2" FontFamily="Segoe Print" Background="#A5C6CD">
+    <Grid Margin="0,0,3.8,33.6">
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="32,65,0,0" TextWrapping="Wrap" Text="{Binding SelectedPlant.Plant_Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="245"/>
+        <Label Content="Название растения" HorizontalAlignment="Left" Margin="32,30,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="68" Margin="32,128,0,0" TextWrapping="Wrap" Text="{Binding SelectedPlant.Cutting_Comment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="245"/>
+        <Label Content="Удобрения" HorizontalAlignment="Left" Margin="32,201,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="68" Margin="32,268,0,0" TextWrapping="Wrap" Text="{Binding SelectedPlant.Fert_Comment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="245"/>
+        <Label Content="Полив" HorizontalAlignment="Left" Margin="32,341,0,0" VerticalAlignment="Top" Width="72"/>
+        <TextBox HorizontalAlignment="Left" Height="68" Margin="32,376,0,0" TextWrapping="Wrap" Text="{Binding SelectedPlant.Watering_Comment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="245"/>
+        <Label Content="Изображение" HorizontalAlignment="Left" Margin="350,232,0,0" VerticalAlignment="Top"/>
+        <ComboBox ItemsSource="{Binding FertSource}" DisplayMemberPath="Fert_Name" SelectedValuePath="Fert_ID" SelectedItem ="{Binding SelectedPlant.Fertilizer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="32,236,0,0" VerticalAlignment="Top" Width="245"/>
+        <Label Content="Почва" HorizontalAlignment="Left" Margin="350,30,0,0" VerticalAlignment="Top"/>
+        <ComboBox ItemsSource="{Binding SoilTSource}" DisplayMemberPath="ST_Name" SelectedValuePath="ST_ID" SelectedItem ="{Binding SelectedPlant.Soil_Type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="350,60,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Срок жизни" HorizontalAlignment="Left" Margin="345,92,0,0" VerticalAlignment="Top"/>
+        <ComboBox ItemsSource="{Binding LifeSSource}" DisplayMemberPath="Lifespan1" SelectedValuePath="LS_ID" SelectedItem ="{Binding SelectedPlant.Lifespan, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="350,127,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Жизненная форма" HorizontalAlignment="Left" Margin="350,159,0,0" VerticalAlignment="Top"/>
+        <ComboBox ItemsSource="{Binding LifeFSource}" DisplayMemberPath="LF_Name" SelectedValuePath="LF_ID" SelectedItem ="{Binding SelectedPlant.Life_Form, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="350,194,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="ОК" Command="{Binding Path=CreatePlant}" HorizontalAlignment="Left" Margin="350,420,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Обзор" Command="{Binding Path=OpenFD}" HorizontalAlignment="Left" Margin="350,267,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Обрезка" HorizontalAlignment="Left" Margin="32,93,0,0" VerticalAlignment="Top" Width="72"/>
 
     </Grid>
 </Window>

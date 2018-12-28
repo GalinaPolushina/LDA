@@ -5,12 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LDAssistant.View"
         mc:Ignorable="d"
-        Title="About" Height="450" Width="800">
-    <Grid>
-        <RichTextBox HorizontalAlignment="Left" Height="283" Margin="92,60,0,0" VerticalAlignment="Top" Width="561">
+        Title="О программе" FontFamily="Segoe Print" Height="450" Width="588.8" Background="#A5C6CD">
+    <Grid Margin="0,0,-6.6,-1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="155*"/>
+            <ColumnDefinition Width="638*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <RichTextBox HorizontalAlignment="Center" Background="#E1E1E1" Height="32" Margin="10,15,21.8,127" Width="541" TextChanged="RichTextBox_TextChanged" Grid.ColumnSpan="2">
             <FlowDocument>
                 <Paragraph>
-                    <Run Text="Программа создана струденкой группы 3-42 Полушиной Галиной"/>
+                    <Run Text="Программа создана струденкой группы 3-42 Полушиной Галиной" FontSize="15" />
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>

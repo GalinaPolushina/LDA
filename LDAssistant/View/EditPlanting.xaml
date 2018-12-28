@@ -5,23 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LDAssistant.View"
         mc:Ignorable="d"
-        Title="EditPlanting" Height="464.964" Width="902.83">
-    <Grid Margin="0,0,3.8,-19.8">
+        Title="Посадка" Height="311.203" Width="506.213" FontFamily="Segoe Print" Background="#A5C6CD">
+    <Grid Margin="0,0,-81,-19.4">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="193*"/>
-            <ColumnDefinition Width="700*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="118*"/>
+            <ColumnDefinition Width="42*"/>
+            <ColumnDefinition Width="394*"/>
+            <ColumnDefinition Width="19*"/>
         </Grid.ColumnDefinitions>
-        <TextBox HorizontalAlignment="Left" Height="44" Margin="34,45,0,0" TextWrapping="Wrap" Text="{Binding SelectedPlanting.Planting_Place, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="195" Grid.ColumnSpan="2"/>
-        <Label Content="Место" HorizontalAlignment="Left" Margin="65,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.111,0.497"/>
-        <Label Content="Дата" HorizontalAlignment="Left" Margin="65,119,0,0" VerticalAlignment="Top"/>
-        <DatePicker SelectedDate="{Binding Path=SelectedPlanting.Planting_Date, Mode=TwoWay}" HorizontalAlignment="Left" Margin="34,170,0,0" VerticalAlignment="Top" Height="29" Width="195" Grid.ColumnSpan="2"/>
-        <ComboBox ItemsSource="{Binding StatusSource}" DisplayMemberPath="Status_Name" SelectedValuePath="Status_ID" SelectedItem ="{Binding SelectedPlanting.Status, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="146.639,62,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-        <Label Content="Статус" HorizontalAlignment="Left" Margin="207.639,36,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <ComboBox ItemsSource="{Binding PlantSource}" DisplayMemberPath="Plant_Name" SelectedValuePath="Plant_ID" SelectedItem ="{Binding SelectedPlanting.Plant, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="146.639,171,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-        <Label Content="Растение" HorizontalAlignment="Left" Margin="207.639,145,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <ComboBox ItemsSource="{Binding ProjectSource}" DisplayMemberPath="Project_Name" SelectedValuePath="Project_ID" SelectedItem ="{Binding SelectedPlanting.Project, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="146.639,302,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.166,-5.831" Grid.Column="1"/>
-        <Label Content="Проект" HorizontalAlignment="Left" Margin="207.639,276,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <Button Content="ОК" Command="{Binding Path=CreatePlanting}" Grid.Column="1" HorizontalAlignment="Left" Margin="571.2,394,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox HorizontalAlignment="Left" Height="94" Margin="22,45,0,0" TextWrapping="Wrap" Text="{Binding SelectedPlanting.Planting_Place, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="195" Grid.ColumnSpan="3" Grid.Column="1"/>
+        <Label Content="Место" HorizontalAlignment="Left" Margin="22,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.111,0.497" Grid.Column="1"/>
+        <Label Content="Дата" HorizontalAlignment="Left" Margin="27,144,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.197,0.387" Grid.Column="1"/>
+        <DatePicker SelectedDate="{Binding Path=SelectedPlanting.Planting_Date, Mode=TwoWay}" HorizontalAlignment="Left" Margin="27,179,0,0" VerticalAlignment="Top" Height="29" Width="195" Grid.ColumnSpan="3" Grid.Column="1"/>
+        <ComboBox ItemsSource="{Binding StatusSource}" DisplayMemberPath="Status_Name" SelectedValuePath="Status_ID" SelectedItem ="{Binding SelectedPlanting.Status, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="94.554,112,0,0" VerticalAlignment="Top" Width="189" Grid.Column="3"/>
+        <Label Content="Статус" HorizontalAlignment="Left" Margin="94.554,77,0,0" VerticalAlignment="Top" Grid.Column="3" RenderTransformOrigin="-2.843,-1.582"/>
+        <ComboBox ItemsSource="{Binding PlantSource}" DisplayMemberPath="Plant_Name" SelectedValuePath="Plant_ID" SelectedItem ="{Binding SelectedPlanting.Plant, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="94.554,45,0,0" VerticalAlignment="Top" Width="190" Grid.Column="3"/>
+        <Label Content="Растение" HorizontalAlignment="Left" Margin="94.554,10,0,0" VerticalAlignment="Top" Grid.Column="3"/>
+        <ComboBox ItemsSource="{Binding ProjectSource}" DisplayMemberPath="Project_Name" SelectedValuePath="Project_ID" SelectedItem ="{Binding SelectedPlanting.Project, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="97,179,0,0" VerticalAlignment="Top" Width="186" RenderTransformOrigin="0.166,-5.831" Grid.Column="3">
+            <ComboBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.442"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ComboBox.RenderTransform>
+        </ComboBox>
+        <Label Content="Проект" HorizontalAlignment="Left" Margin="97.554,144,0,0" VerticalAlignment="Top" Grid.Column="3"/>
+        <Button Content="ОК" Command="{Binding Path=CreatePlanting}" Grid.Column="3" HorizontalAlignment="Left" Margin="208.554,239,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
