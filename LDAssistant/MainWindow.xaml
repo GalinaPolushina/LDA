@@ -6,19 +6,62 @@
         xmlns:local="clr-namespace:LDAssistant"
         xmlns:viewmodels="clr-namespace:LDAssistant.ViewModel"
         mc:Ignorable="d"
-        Title="Landscape Designer Assistant" Height="600" Width="800">
+        Title="Landscape Designer Assistant" Height="600" Width="800" Background="#A5C6CD">
+
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Segoe Print" />
+            <Setter Property="Background" Value="#58787E" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Margin" Value="10" />
+        </Style>
+
+    </Window.Resources>
 
     <Grid>
-        <DataGrid ItemsSource="{Binding PlantingSource}" AutoGenerateColumns="false" HorizontalAlignment="Left" Height="496" Margin="226,10,0,0" VerticalAlignment="Top" Width="558">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="299*"/>
+            <RowDefinition Height="272*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="655*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="138*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid ItemsSource="{Binding PlantingSource}" SelectedItem="{Binding SelectedPlanting}" AutoGenerateColumns="false" HorizontalAlignment="Left" Height="419" Margin="287,87,0,0" VerticalAlignment="Top" Width="497" Grid.ColumnSpan="3" Grid.RowSpan="2">
             <DataGrid.Columns>
+                <DataGridTextColumn Header="Проект" Binding="{Binding Project.Project_Name}" />
                 <DataGridTextColumn Header="Растение" Binding="{Binding Plant.Plant_Name}" />
-            </DataGrid.Columns>            
-        </DataGrid>
-
-        <DataGrid ItemsSource="{Binding PlantSource}" AutoGenerateColumns="false" HorizontalAlignment="Left" Height="496" Margin="10,10,0,0" VerticalAlignment="Top" Width="211">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Название" Binding="{Binding Plant_Name}" />
+                <DataGridTextColumn Header="Статус" Binding="{Binding Status.Status_Name}" />
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Добавить" Command="{Binding Path=CreatePlanting}" HorizontalAlignment="Left" Margin="309,228.5,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.564,0.917" Height="19" Grid.Row="1"/>
+        <Button Content="Редактировать" Command="{Binding Path=UpdatePlanting}" CommandParameter="SelectedPlanting" HorizontalAlignment="Left" Margin="389,228.5,0,0" VerticalAlignment="Top" Width="80" Height="33" Grid.Row="1"/>
+        <Button Content="Удалить" Command="{Binding Path=DeleteSelectPlanting}" CommandParameter="SelectedPlanting" HorizontalAlignment="Left" Margin="469,228.5,0,0" VerticalAlignment="Top" Width="88" RenderTransformOrigin="0.94,0.667" Height="33" Grid.Row="1" />
+        <Button Content="Добавить" Command="{Binding Path=CreatePlant}" HorizontalAlignment="Left" Margin="10,228.5,0,0" VerticalAlignment="Top" Width="75" Height="19" Grid.Row="1"/>
+        <Button Content="Редактировать" Command="{Binding Path=UpdatePlant}" CommandParameter="SelectedPlant" HorizontalAlignment="Left" Margin="90,228.5,0,0" VerticalAlignment="Top" Width="75" Height="19" Grid.Row="1"/>
+        <Button Content="Удалить" Command="{Binding Path=DeleteSelectPlant}" CommandParameter="SelectedPlant" HorizontalAlignment="Left" Margin="170,228.5,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.94,0.667" Height="19" Grid.Row="1"/>
+        <Menu HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" VerticalAlignment="Top" Width="774" Grid.ColumnSpan="3">
+            <MenuItem Height="30" Header="О программе" Command="{Binding Path=SA}"></MenuItem>
+            <MenuItem Header="Справка" Command="{Binding Path=SH}"></MenuItem>
+            <MenuItem Header="Проекты" Command="{Binding Path=OP}"></MenuItem>
+        </Menu>
+
+        <ListBox Background="#E1E1E1" Width="250" ItemsSource="{Binding PlantSource}" SelectedItem="{Binding SelectedPlant}" Margin="15,87,387.2,64.4" RenderTransformOrigin="0.472,0.711" Grid.RowSpan="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock FontSize="15" HorizontalAlignment="Center" Text="{Binding Path=Plant_Name}" />
+                        <ListBoxItem>
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="100">
+                                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="{Binding Image}"></Image>
+                            </StackPanel>
+                        </ListBoxItem>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
     </Grid>
 </Window>

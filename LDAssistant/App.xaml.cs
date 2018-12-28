@@ -23,12 +23,6 @@ namespace LDAssistant
             };
             mainWindow.Show();
 
-            /*var mainWindow = new EditPlanting()
-            {
-                DataContext = new EditPlantingVM()
-            };
-            mainWindow.Show();*/
-
         }
 
 

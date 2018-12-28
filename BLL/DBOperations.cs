@@ -13,9 +13,9 @@ namespace BLL
     {
         LDA db;
 
-        public DBOperations()
+        public DBOperations(LDA l)
         {
-            this.db = new LDA();
+            this.db = l;            
         }
 
         public ObservableCollection<Plant> GetAllPlants()
@@ -80,6 +80,68 @@ namespace BLL
         {
             db.Plantings.Add(Planting);
             return Save();
+        }
+
+        public Project GetProject(int id)
+        {
+            return db.Projects.Find(id);
+        }
+
+        public void UpdateProject(Project Project)
+        {
+            db.Entry(Project).State = EntityState.Modified;
+        }
+
+        public bool DeleteProject(int id)
+        {
+            Project Project = db.Projects.Find(id);
+            if (Project != null)
+            {
+                db.Projects.Remove(Project);
+            }
+            return Save();
+        }
+
+        public bool CreateProject(Project Project)
+        {
+            db.Projects.Add(Project);
+            return Save();
+        }
+
+        public ObservableCollection<Status> GetAllStatus()
+        {
+            db.Status.Load();
+            return db.Status.Local;
+        }
+
+        public ObservableCollection<Project> GetAllProjects()
+        {
+            db.Projects.Load();
+            return db.Projects.Local;
+        }
+
+        public ObservableCollection<Soil_Type> GetAllSoilT()
+        {
+            db.Soil_Type.Load();
+            return db.Soil_Type.Local;
+        }
+
+        public ObservableCollection<Fertilizer> GetAllFert()
+        {
+            db.Fertilizers.Load();
+            return db.Fertilizers.Local;
+        }
+
+        public ObservableCollection<Lifespan> GetAllLifeS()
+        {
+            db.Lifespans.Load();
+            return db.Lifespans.Local;
+        }
+
+        public ObservableCollection<Life_Form> GetAllLifeF()
+        {
+            db.Life_Form.Load();
+            return db.Life_Form.Local;
         }
 
         public bool Save()

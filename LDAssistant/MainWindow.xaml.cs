@@ -26,5 +26,11 @@ namespace LDAssistant
             //DataContext = new MainVM();
             InitializeComponent();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = new View.About();
+            window.Show();
+        }
     }
 }
